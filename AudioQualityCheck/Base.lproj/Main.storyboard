@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="AudioQualityCheck" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -15,11 +16,139 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVAudioEngine" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lg-iA-PtB">
+                                <rect key="frame" x="50" y="60" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ViE-qR-hsn">
+                                <rect key="frame" x="50" y="120" width="59" height="30"/>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="didTapAVAudioEngineButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Fsr-sd-Jih"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="6WK-dH-Qy3">
+                                <rect key="frame" x="153" y="120" width="398" height="31"/>
+                                <connections>
+                                    <action selector="didChangedAVAudioEngineSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="eMI-tX-uTG"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AVAudioPlayer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xia-p6-9bZ">
+                                <rect key="frame" x="50" y="180" width="111" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stC-fW-2NG">
+                                <rect key="frame" x="50" y="240" width="30" height="30"/>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="didTapAVAudioPlayerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Dsu-9R-Rid"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="TFx-KV-Wrt">
+                                <rect key="frame" x="110" y="244" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="JTv-Fu-AY4">
+                                <rect key="frame" x="153" y="240" width="398" height="31"/>
+                                <connections>
+                                    <action selector="didChangeAVAudioPlayerSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="8Sr-qu-pzl"/>
+                                </connections>
+                            </slider>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AudioUnit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBR-JA-Zdo">
+                                <rect key="frame" x="50" y="300" width="76" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sen-F0-PEz">
+                                <rect key="frame" x="50" y="340" width="30" height="30"/>
+                                <state key="normal" title="再生"/>
+                                <connections>
+                                    <action selector="didTapAudioUnitPlayerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kje-vB-xy8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Xx1-pP-eOh">
+                                <rect key="frame" x="110" y="344" width="30" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="lXC-4n-Fv4">
+                                <rect key="frame" x="132" y="124" width="8" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.10000000000000001" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="qS5-qt-89z">
+                                <rect key="frame" x="153" y="340" width="398" height="31"/>
+                                <connections>
+                                    <action selector="didChangeAudioUnitSlider:" destination="BYZ-38-t0r" eventType="valueChanged" id="V2B-7N-sw7"/>
+                                </connections>
+                            </slider>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lXC-4n-Fv4" firstAttribute="top" secondItem="5lg-iA-PtB" secondAttribute="bottom" constant="43" id="2Vx-ff-3H4"/>
+                            <constraint firstItem="qS5-qt-89z" firstAttribute="leading" secondItem="Xx1-pP-eOh" secondAttribute="trailing" constant="15" id="7dE-W8-7w7"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="trailing" secondItem="TFx-KV-Wrt" secondAttribute="trailing" id="B4x-7C-Tzq"/>
+                            <constraint firstItem="ViE-qR-hsn" firstAttribute="leading" secondItem="5lg-iA-PtB" secondAttribute="leading" id="BGv-Oi-G9o"/>
+                            <constraint firstItem="6WK-dH-Qy3" firstAttribute="top" secondItem="5lg-iA-PtB" secondAttribute="bottom" constant="39" id="Cna-3u-BPe"/>
+                            <constraint firstItem="Xia-p6-9bZ" firstAttribute="centerX" secondItem="ViE-qR-hsn" secondAttribute="centerX" id="Fof-3u-1SX"/>
+                            <constraint firstItem="qS5-qt-89z" firstAttribute="leading" secondItem="MBR-JA-Zdo" secondAttribute="trailing" constant="29" id="G4V-jO-lKq"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="baseline" secondItem="sen-F0-PEz" secondAttribute="baseline" id="KnZ-gO-2FC"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="centerY" secondItem="qS5-qt-89z" secondAttribute="centerY" id="Nvb-Un-pg5"/>
+                            <constraint firstItem="5lg-iA-PtB" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="40" id="O7O-8X-Tng"/>
+                            <constraint firstItem="ViE-qR-hsn" firstAttribute="top" secondItem="5lg-iA-PtB" secondAttribute="bottom" constant="39" id="PxA-to-wuX"/>
+                            <constraint firstItem="TFx-KV-Wrt" firstAttribute="top" secondItem="Xia-p6-9bZ" secondAttribute="bottom" constant="43" id="RtA-IM-tgB"/>
+                            <constraint firstItem="TFx-KV-Wrt" firstAttribute="leading" secondItem="stC-fW-2NG" secondAttribute="trailing" constant="30" id="TSq-rN-NSZ"/>
+                            <constraint firstItem="Xia-p6-9bZ" firstAttribute="top" secondItem="ViE-qR-hsn" secondAttribute="bottom" constant="30" id="UrI-q5-nOo"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="leading" secondItem="MBR-JA-Zdo" secondAttribute="trailing" constant="-16" id="VVz-U0-cek"/>
+                            <constraint firstItem="sen-F0-PEz" firstAttribute="top" secondItem="MBR-JA-Zdo" secondAttribute="bottom" constant="19" id="Y1J-qA-QRx"/>
+                            <constraint firstItem="lXC-4n-Fv4" firstAttribute="leading" secondItem="ViE-qR-hsn" secondAttribute="trailing" constant="23" id="YBQ-aO-yxn"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="110" id="Yqz-7l-WQ2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Xx1-pP-eOh" secondAttribute="bottom" constant="235" id="Z1t-zO-rox"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="trailing" secondItem="lXC-4n-Fv4" secondAttribute="trailing" id="biZ-b6-uf1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JTv-Fu-AY4" secondAttribute="trailing" constant="31" id="dce-kn-8b9"/>
+                            <constraint firstItem="JTv-Fu-AY4" firstAttribute="leading" secondItem="TFx-KV-Wrt" secondAttribute="trailing" constant="15" id="eBk-tH-C6u"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="leading" secondItem="TFx-KV-Wrt" secondAttribute="leading" id="eXX-Pl-kx9"/>
+                            <constraint firstItem="Xx1-pP-eOh" firstAttribute="leading" secondItem="sen-F0-PEz" secondAttribute="trailing" constant="30" id="iOB-BM-aqQ"/>
+                            <constraint firstItem="stC-fW-2NG" firstAttribute="top" secondItem="Xia-p6-9bZ" secondAttribute="bottom" constant="39" id="mbC-aJ-kXB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6WK-dH-Qy3" secondAttribute="trailing" constant="31" id="qUJ-hZ-QvT"/>
+                            <constraint firstItem="6WK-dH-Qy3" firstAttribute="leading" secondItem="lXC-4n-Fv4" secondAttribute="trailing" constant="15" id="rTz-vK-vQC"/>
+                            <constraint firstItem="5lg-iA-PtB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="ruq-dm-LdL"/>
+                            <constraint firstItem="JTv-Fu-AY4" firstAttribute="leading" secondItem="Xia-p6-9bZ" secondAttribute="trailing" constant="-6" id="se0-PG-0ST"/>
+                            <constraint firstItem="JTv-Fu-AY4" firstAttribute="top" secondItem="stC-fW-2NG" secondAttribute="top" id="spF-17-33Y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qS5-qt-89z" secondAttribute="trailing" constant="31" id="u3e-ud-6E1"/>
+                            <constraint firstItem="Xia-p6-9bZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="30" id="wVr-l7-4YV"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fof-3u-1SX"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="audioUnitPlayerButton" destination="sen-F0-PEz" id="QyI-8n-icu"/>
+                        <outlet property="audioUnitPlayerSpeedLabel" destination="Xx1-pP-eOh" id="xbw-68-8LW"/>
+                        <outlet property="audioUnitPlayerSpeedSlider" destination="qS5-qt-89z" id="hBk-jG-CRK"/>
+                        <outlet property="avAudioEngineButton" destination="ViE-qR-hsn" id="uxb-Lb-09o"/>
+                        <outlet property="avAudioEngineSpeedLabel" destination="lXC-4n-Fv4" id="vxN-dI-IWe"/>
+                        <outlet property="avAudioEngineSpeedSlider" destination="6WK-dH-Qy3" id="exx-vg-gpB"/>
+                        <outlet property="avAudioPlayerButton" destination="stC-fW-2NG" id="ptC-ZC-y0s"/>
+                        <outlet property="avAudioPlayerSpeedLabel" destination="TFx-KV-Wrt" id="B3z-Yz-zvH"/>
+                        <outlet property="avAudioPlayerSpeedSlider" destination="JTv-Fu-AY4" id="cYE-i4-boO"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="293" y="389"/>
         </scene>
     </scenes>
 </document>

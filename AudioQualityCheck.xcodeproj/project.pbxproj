@@ -12,6 +12,10 @@
 		029656341BF357ED0001F860 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029656321BF357ED0001F860 /* Main.storyboard */; };
 		029656361BF357ED0001F860 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 029656351BF357ED0001F860 /* Assets.xcassets */; };
 		029656391BF357ED0001F860 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 029656371BF357ED0001F860 /* LaunchScreen.storyboard */; };
+		029656561BF35B260001F860 /* sample.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0296564B1BF35B260001F860 /* sample.mp3 */; settings = {ASSET_TAGS = (); }; };
+		02FCA39A1C0194FF004B8DCC /* AudioIO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FCA3991C0194FF004B8DCC /* AudioIO.swift */; settings = {ASSET_TAGS = (); }; };
+		02FCA39D1C019844004B8DCC /* AudioUnitEX.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCA39C1C019844004B8DCC /* AudioUnitEX.m */; settings = {ASSET_TAGS = (); }; };
+		02FCA3A01C019E96004B8DCC /* AUiPodTimeProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 02FCA39F1C019E96004B8DCC /* AUiPodTimeProxy.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +26,13 @@
 		029656351BF357ED0001F860 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		029656381BF357ED0001F860 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0296563A1BF357ED0001F860 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0296564B1BF35B260001F860 /* sample.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sample.mp3; sourceTree = "<group>"; };
+		029656661BF3707D0001F860 /* AudioQualityCheck-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AudioQualityCheck-Bridging-Header.h"; sourceTree = "<group>"; };
+		02FCA3991C0194FF004B8DCC /* AudioIO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioIO.swift; sourceTree = "<group>"; };
+		02FCA39B1C019844004B8DCC /* AudioUnitEX.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioUnitEX.h; sourceTree = "<group>"; };
+		02FCA39C1C019844004B8DCC /* AudioUnitEX.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioUnitEX.m; sourceTree = "<group>"; };
+		02FCA39E1C019E96004B8DCC /* AUiPodTimeProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AUiPodTimeProxy.h; sourceTree = "<group>"; };
+		02FCA39F1C019E96004B8DCC /* AUiPodTimeProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AUiPodTimeProxy.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,14 +65,29 @@
 		0296562D1BF357ED0001F860 /* AudioQualityCheck */ = {
 			isa = PBXGroup;
 			children = (
+				029656401BF35B250001F860 /* Resources */,
 				0296562E1BF357ED0001F860 /* AppDelegate.swift */,
 				029656301BF357ED0001F860 /* ViewController.swift */,
 				029656321BF357ED0001F860 /* Main.storyboard */,
 				029656351BF357ED0001F860 /* Assets.xcassets */,
 				029656371BF357ED0001F860 /* LaunchScreen.storyboard */,
 				0296563A1BF357ED0001F860 /* Info.plist */,
+				029656661BF3707D0001F860 /* AudioQualityCheck-Bridging-Header.h */,
+				02FCA3991C0194FF004B8DCC /* AudioIO.swift */,
+				02FCA39B1C019844004B8DCC /* AudioUnitEX.h */,
+				02FCA39C1C019844004B8DCC /* AudioUnitEX.m */,
+				02FCA39E1C019E96004B8DCC /* AUiPodTimeProxy.h */,
+				02FCA39F1C019E96004B8DCC /* AUiPodTimeProxy.m */,
 			);
 			path = AudioQualityCheck;
+			sourceTree = "<group>";
+		};
+		029656401BF35B250001F860 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				0296564B1BF35B260001F860 /* sample.mp3 */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -90,6 +116,7 @@
 		029656231BF357ED0001F860 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = tenifre;
 				TargetAttributes = {
@@ -121,6 +148,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				029656561BF35B260001F860 /* sample.mp3 in Resources */,
 				029656391BF357ED0001F860 /* LaunchScreen.storyboard in Resources */,
 				029656361BF357ED0001F860 /* Assets.xcassets in Resources */,
 				029656341BF357ED0001F860 /* Main.storyboard in Resources */,
@@ -135,7 +163,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				029656311BF357ED0001F860 /* ViewController.swift in Sources */,
+				02FCA39A1C0194FF004B8DCC /* AudioIO.swift in Sources */,
 				0296562F1BF357ED0001F860 /* AppDelegate.swift in Sources */,
+				02FCA39D1C019844004B8DCC /* AudioUnitEX.m in Sources */,
+				02FCA3A01C019E96004B8DCC /* AUiPodTimeProxy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -246,10 +277,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				INFOPLIST_FILE = AudioQualityCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioQualityCheck/SoundTouch",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tenifre.AudioQualityCheck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioQualityCheck/AudioQualityCheck-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -257,10 +296,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				GCC_INPUT_FILETYPE = sourcecode.cpp.objcpp;
 				INFOPLIST_FILE = AudioQualityCheck/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/AudioQualityCheck/SoundTouch",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = jp.tenifre.AudioQualityCheck;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "AudioQualityCheck/AudioQualityCheck-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -283,6 +329,7 @@
 				0296563F1BF357ED0001F860 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
